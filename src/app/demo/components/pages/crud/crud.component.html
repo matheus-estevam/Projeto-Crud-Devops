@@ -70,7 +70,7 @@
                     <div
                         class="flex flex-column md:flex-row md:justify-content-between md:align-items-center"
                     >
-                        <h5 class="m-0">Manage Products</h5>
+                        <h5 class="m-0">Manage Tutors</h5>
                         <span class="block mt-2 md:mt-0 p-input-icon-left">
                             <i class="pi pi-search"></i>
                             <input
@@ -91,23 +91,40 @@
                         <th pSortableColumn="code">
                             Code <p-sortIcon field="code"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="name">
-                            Name <p-sortIcon field="name"></p-sortIcon>
+                        <th pSortableColumn="nome">
+                            Nome <p-sortIcon field="nome"></p-sortIcon>
                         </th>
-                        <th>Image</th>
-                        <th pSortableColumn="price">
-                            Price <p-sortIcon field="price"></p-sortIcon>
+                        <th pSortableColumn="rua">
+                            Rua <p-sortIcon field="rua"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="category">
-                            Category <p-sortIcon field="category"></p-sortIcon>
+                        <th pSortableColumn="bairro">
+                            Bairro <p-sortIcon field="bairro"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="rating">
-                            Reviews <p-sortIcon field="rating"></p-sortIcon>
+                        <th pSortableColumn="numero">
+                            Número <p-sortIcon field="numero"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="inventoryStatus">
+                        <th pSortableColumn="cidade">
+                            Cidade <p-sortIcon field="cidade"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="cep">
+                            Cep <p-sortIcon field="cep"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="estado">
+                            Estado <p-sortIcon field="estado"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="telefone">
+                            Telefone <p-sortIcon field="telefone"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="cpf">
+                            Cpf <p-sortIcon field="cpf"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="sexo">
+                            Sexo <p-sortIcon field="sexo"></p-sortIcon>
+                        </th>
+                        <!-- <th pSortableColumn="inventoryStatus">
                             Status
                             <p-sortIcon field="inventoryStatus"></p-sortIcon>
-                        </th>
+                        </th> -->
                         <th></th>
                     </tr>
                 </ng-template>
@@ -122,34 +139,45 @@
                         </td>
                         <td style="width: 14%; min-width: 10rem">
                             <span class="p-column-title">Name</span>
-                            {{ pet.name }}
+                            {{ pet.nome }}
                         </td>
                         <td style="width: 14%; min-width: 10rem">
-                            <span class="p-column-title">Image</span>
-                            <img
-                                [src]="'assets/demo/images/product' + pet.image"
-                                [alt]="pet.name"
-                                width="100"
-                                class="shadow-4"
-                            />
+                            <span class="p-column-title">Rua</span>
+                            {{ pet.rua }}
                         </td>
                         <td style="width: 14%; min-width: 8rem">
-                            <span class="p-column-title">Price</span>
-                            {{ pet.price | currency : "USD" }}
+                            <span class="p-column-title">Bairro</span>
+                            {{ pet.bairro }}
                         </td>
                         <td style="width: 14%; min-width: 10rem">
-                            <span class="p-column-title">Category</span>
-                            {{ pet.category }}
+                            <span class="p-column-title">Número</span>
+                            {{ pet.numero }}
                         </td>
                         <td style="width: 14%; min-width: 10rem">
-                            <span class="p-column-title">Reviews</span>
-                            <p-rating
-                                [ngModel]="pet.rating"
-                                [readonly]="true"
-                                [cancel]="false"
-                            ></p-rating>
+                            <span class="p-column-title">Cidade</span>
+                            {{ pet.cidade }}
                         </td>
                         <td style="width: 14%; min-width: 10rem">
+                            <span class="p-column-title">Cep</span>
+                            {{ pet.cep }}
+                        </td>
+                        <td style="width: 14%; min-width: 10rem">
+                            <span class="p-column-title">Estado</span>
+                            {{ pet.estado }}
+                        </td>
+                        <td style="width: 14%; min-width: 10rem">
+                            <span class="p-column-title">Telefone</span>
+                            {{ pet.telefone }}
+                        </td>
+                        <td style="width: 14%; min-width: 10rem">
+                            <span class="p-column-title">Cpf</span>
+                            {{ pet.cpf }}
+                        </td>
+                        <td style="width: 14%; min-width: 10rem">
+                            <span class="p-column-title">Sexo</span>
+                            {{ pet.sexo }}
+                        </td>
+                        <!-- <td style="width: 14%; min-width: 10rem">
                             <span class="p-column-title">Status</span>
                             <span
                                 [class]="
@@ -160,7 +188,7 @@
                                 "
                                 >{{ pet.inventoryStatus }}</span
                             >
-                        </td>
+                        </td> -->
                         <td>
                             <div class="flex">
                                 <button
@@ -192,44 +220,37 @@
             class="p-fluid"
         >
             <ng-template pTemplate="content">
-                <img
-                    [src]="'assets/demo/images/product/' + pet.image"
-                    [alt]="pet.image"
-                    width="150"
-                    class="mt-0 mx-auto mb-5 block shadow-2"
-                    *ngIf="pet.image"
-                />
                 <div class="field">
-                    <label for="name">Name</label>
+                    <label for="name">Nome</label>
                     <input
                         type="text"
                         pInputText
                         id="name"
-                        [(ngModel)]="pet.name"
+                        [(ngModel)]="pet.nome"
                         required
                         autofocus
                         [ngClass]="{
-                            'ng-invalid ng-dirty': submitted && !pet.name
+                            'ng-invalid ng-dirty': submitted && !pet.nome
                         }"
                     />
                     <small
                         class="ng-dirty ng-invalid"
-                        *ngIf="submitted && !pet.name"
+                        *ngIf="submitted && !pet.nome"
                         >Name is required.</small
                     >
                 </div>
                 <div class="field">
-                    <label for="description">Description</label>
+                    <label for="rua">Rua</label>
                     <textarea
-                        id="description"
+                        id="rua"
                         pInputTextarea
-                        [(ngModel)]="pet.description"
+                        [(ngModel)]="pet.rua"
                         required
                         rows="3"
                         cols="20"
                     ></textarea>
                 </div>
-                <div class="field">
+                <!-- <div class="field">
                     <label for="status">Inventory Status</label>
                     <p-dropdown
                         [(ngModel)]="pet.inventoryStatus"
@@ -255,51 +276,170 @@
                             >
                         </ng-template>
                     </p-dropdown>
+                </div> -->
+
+                <div class="field">
+                    <label for="bairro">Bairro</label>
+                    <input
+                        type="text"
+                        pInputText
+                        id="bairro"
+                        [(ngModel)]="pet.bairro"
+                        required
+                        autofocus
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && !pet.bairro
+                        }"
+                    />
+                    <small
+                        class="ng-dirty ng-invalid"
+                        *ngIf="submitted && !pet.bairro"
+                        >Name is required.</small
+                    >
                 </div>
 
                 <div class="field">
-                    <label class="mb-3">Category</label>
+                    <label for="numero">Número</label>
+                    <p-inputNumber
+                        id="numero"
+                        [(ngModel)]="pet.numero"
+                    ></p-inputNumber>
+                </div>
+
+                <div class="field">
+                    <label for="cidade">Cidade</label>
+                    <input
+                        type="text"
+                        pInputText
+                        id="cidade"
+                        [(ngModel)]="pet.cidade"
+                        required
+                        autofocus
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && !pet.cidade
+                        }"
+                    />
+                    <small
+                        class="ng-dirty ng-invalid"
+                        *ngIf="submitted && !pet.cidade"
+                        >Name is required.</small
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="cidade">Cep</label>
+                    <input
+                        type="text"
+                        pInputText
+                        id="cep"
+                        [(ngModel)]="pet.cep"
+                        required
+                        autofocus
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && !pet.cep
+                        }"
+                    />
+                    <small
+                        class="ng-dirty ng-invalid"
+                        *ngIf="submitted && !pet.cep"
+                        >Name is required.</small
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="cidade">Estado</label>
+                    <input
+                        type="text"
+                        pInputText
+                        id="estado"
+                        [(ngModel)]="pet.estado"
+                        required
+                        autofocus
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && !pet.estado
+                        }"
+                    />
+                    <small
+                        class="ng-dirty ng-invalid"
+                        *ngIf="submitted && !pet.estado"
+                        >Name is required.</small
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="telefone">Telefone</label>
+                    <input
+                        type="text"
+                        pInputText
+                        id="telefone"
+                        [(ngModel)]="pet.telefone"
+                        required
+                        autofocus
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && !pet.telefone
+                        }"
+                    />
+                    <small
+                        class="ng-dirty ng-invalid"
+                        *ngIf="submitted && !pet.telefone"
+                        >Name is required.</small
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="cpf">Cpf</label>
+                    <input
+                        type="text"
+                        pInputText
+                        id="cpf"
+                        [(ngModel)]="pet.cpf"
+                        required
+                        autofocus
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && !pet.cpf
+                        }"
+                    />
+                    <small
+                        class="ng-dirty ng-invalid"
+                        *ngIf="submitted && !pet.cpf"
+                        >Name is required.</small
+                    >
+                </div>
+
+                <div class="field">
+                    <label class="mb-3">Sexo</label>
                     <div class="formgrid grid">
                         <div class="field-radiobutton col-6">
                             <p-radioButton
                                 id="category1"
-                                name="category"
-                                value="Accessories"
-                                [(ngModel)]="pet.category"
+                                name="sexo"
+                                value="Masculino"
+                                [(ngModel)]="pet.sexo"
                             ></p-radioButton>
-                            <label for="category1">Accessories</label>
+                            <label for="category1">Masculino</label>
                         </div>
                         <div class="field-radiobutton col-6">
                             <p-radioButton
                                 id="category2"
                                 name="category"
-                                value="Clothing"
-                                [(ngModel)]="pet.category"
+                                value="Feminino"
+                                [(ngModel)]="pet.sexo"
                             ></p-radioButton>
-                            <label for="category2">Clothing</label>
+                            <label for="category2">Feminino</label>
                         </div>
                         <div class="field-radiobutton col-6">
                             <p-radioButton
                                 id="category3"
                                 name="category"
-                                value="Electronics"
-                                [(ngModel)]="pet.category"
+                                value="Outros"
+                                [(ngModel)]="pet.sexo"
                             ></p-radioButton>
-                            <label for="category3">Electronics</label>
-                        </div>
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton
-                                id="category4"
-                                name="category"
-                                value="Fitness"
-                                [(ngModel)]="pet.category"
-                            ></p-radioButton>
-                            <label for="category4">Fitness</label>
+                            <label for="category3">Outros</label>
                         </div>
                     </div>
                 </div>
 
-                <div class="formgrid grid">
+                <!-- <div class="formgrid grid">
                     <div class="field col">
                         <label for="price">Price</label>
                         <p-inputNumber
@@ -317,7 +457,7 @@
                             [(ngModel)]="pet.quantity"
                         ></p-inputNumber>
                     </div>
-                </div>
+                </div> -->
             </ng-template>
 
             <ng-template pTemplate="footer">

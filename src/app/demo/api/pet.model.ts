@@ -1,17 +1,15 @@
-interface InventoryStatus {
-    label: string;
-    value: string;
-}
 export interface Pet {
     id?: string;
     key?: string;
     code?: string;
-    name?: string;
-    description?: string;
-    price?: number;
-    quantity?: number;
-    inventoryStatus?: InventoryStatus;
-    category?: string;
-    image?: string;
-    rating?: number;
+    nome?: string;
+    rua?: string;
+    bairro?: string;
+    numero?: number;
+    cidade?: string;
+    cep?: string;
+    estado?: string;
+    telefone?: string;
+    cpf?: number;
+    sexo?: string; //sexo
 }

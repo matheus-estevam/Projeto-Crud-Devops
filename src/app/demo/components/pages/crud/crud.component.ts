@@ -110,12 +110,12 @@ export class CrudComponent implements OnInit {
     savePet() {
         this.submitted = true;
 
-        if (this.pet.name?.trim()) {
+        if (this.pet.nome?.trim()) {
             if (this.pet.id) {
                 // @ts-ignore
-                this.pet.inventoryStatus = this.pet.inventoryStatus.value
-                    ? this.pet.inventoryStatus.value
-                    : this.pet.inventoryStatus;
+                // this.pet.inventoryStatus = this.pet.inventoryStatus.value
+                //     ? this.pet.inventoryStatus.value
+                //     : this.pet.inventoryStatus;
                 // this.pets[this.findIndexById(this.pet.id)] =
                 //     this.pet;
                 this.petService.updatePet(this.pet.key, this.pet);
@@ -129,9 +129,9 @@ export class CrudComponent implements OnInit {
                 this.pet.id = this.createId();
                 this.petService.createPet(this.pet);
                 // @ts-ignore
-                this.pet.inventoryStatus = this.pet.inventoryStatus
-                    ? this.pet.inventoryStatus.value
-                    : 'INSTOCK';
+                // this.pet.inventoryStatus = this.pet.inventoryStatus
+                //     ? this.pet.inventoryStatus.value
+                //     : 'INSTOCK';
                 // this.products.push(this.product);
                 this.messageService.add({
                     severity: 'success',
