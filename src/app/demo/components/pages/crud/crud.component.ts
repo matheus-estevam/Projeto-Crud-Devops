@@ -120,7 +120,7 @@ export class CrudComponent implements OnInit {
                 //     this.pet;
                 this.petService.updatePet(this.pet.key, this.pet);
                 this.messageService.add({
-                    severity: 'successo',
+                    severity: 'sucesso',
                     summary: 'Successo',
                     detail: 'Tutor atualizado',
                     life: 3000,
