@@ -122,7 +122,7 @@ export class CrudComponent implements OnInit {
                 this.messageService.add({
                     severity: 'successo',
                     summary: 'Successo',
-                    detail: 'Product Updated',
+                    detail: 'Tutor atualizado',
                     life: 3000,
                 });
             } else {
