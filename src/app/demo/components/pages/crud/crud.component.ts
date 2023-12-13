@@ -79,8 +79,8 @@ export class CrudComponent implements OnInit {
         //     (val) => !this.selectedPets.includes(val)
         // );
         this.messageService.add({
-            severity: 'sucesso',
-            summary: 'Sucesso',
+            severity: 'success',
+            summary: 'Sucessful',
             detail: 'Tutor deletado',
             life: 3000,
         });
@@ -94,8 +94,8 @@ export class CrudComponent implements OnInit {
         // );
         this.petService.deletePet(this.pet.key);
         this.messageService.add({
-            severity: 'sucesso',
-            summary: 'Sucesso',
+            severity: 'success',
+            summary: 'Successful',
             detail: 'Tutor Deletado',
             life: 3000,
         });
@@ -120,8 +120,8 @@ export class CrudComponent implements OnInit {
                 //     this.pet;
                 this.petService.updatePet(this.pet.key, this.pet);
                 this.messageService.add({
-                    severity: 'sucesso',
-                    summary: 'Sucesso',
+                    severity: 'success',
+                    summary: 'Successful',
                     detail: 'Tutor atualizado',
                     life: 3000,
                 });
@@ -134,8 +134,8 @@ export class CrudComponent implements OnInit {
                 //     : 'INSTOCK';
                 // this.products.push(this.product);
                 this.messageService.add({
-                    severity: 'sucesso',
-                    summary: 'Sucesso',
+                    severity: 'success',
+                    summary: 'Successful',
                     detail: 'Tutor Criado',
                     life: 3000,
                 });
