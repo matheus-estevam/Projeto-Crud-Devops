@@ -236,7 +236,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.nome"
-                        >Name is required.</small
+                        >O nome é obrigatório.</small
                     >
                 </div>
                 <div class="field">
@@ -294,7 +294,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.bairro"
-                        >Name is required.</small
+                        >O Bairro é obrigatório.</small
                     >
                 </div>
 
@@ -322,7 +322,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.cidade"
-                        >Name is required.</small
+                        >O nome da cidade é obrigatório.</small
                     >
                 </div>
 
@@ -342,7 +342,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.cep"
-                        >Name is required.</small
+                        >O Cep é obrigatório.</small
                     >
                 </div>
 
@@ -362,7 +362,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.estado"
-                        >Name is required.</small
+                        >O Estado é obrigatório.</small
                     >
                 </div>
 
@@ -382,7 +382,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.telefone"
-                        >Name is required.</small
+                        >O Telefone é obrigatório.</small
                     >
                 </div>
 
@@ -402,7 +402,7 @@
                     <small
                         class="ng-dirty ng-invalid"
                         *ngIf="submitted && !pet.cpf"
-                        >Name is required.</small
+                        >O Cpf é obrigatório.</small
                     >
                 </div>
 
@@ -492,7 +492,7 @@
                     style="font-size: 2rem"
                 ></i>
                 <span *ngIf="pet"
-                    >Are you sure you want to delete <b>{{ pet.name }}</b
+                    >Tem certeza de que deseja excluir <b>{{ pet.name }}</b
                     >?</span
                 >
             </div>
@@ -527,7 +527,10 @@
                     class="pi pi-exclamation-triangle mr-3"
                     style="font-size: 2rem"
                 ></i>
-                <span>Are you sure you want to delete selected products?</span>
+                <span
+                    >Tem certeza de que deseja excluir os produtos
+                    selecionados?</span
+                >
             </div>
             <ng-template pTemplate="footer">
                 <button
