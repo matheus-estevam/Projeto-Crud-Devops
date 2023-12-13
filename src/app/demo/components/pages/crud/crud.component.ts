@@ -79,8 +79,8 @@ export class CrudComponent implements OnInit {
         //     (val) => !this.selectedPets.includes(val)
         // );
         this.messageService.add({
-            severity: 'success',
-            summary: 'Successful',
+            severity: 'successo',
+            summary: 'Successo',
             detail: 'Tutor deletado',
             life: 3000,
         });
