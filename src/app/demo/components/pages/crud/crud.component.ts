@@ -94,8 +94,8 @@ export class CrudComponent implements OnInit {
         // );
         this.petService.deletePet(this.pet.key);
         this.messageService.add({
-            severity: 'successo',
-            summary: 'Successo',
+            severity: 'sucesso',
+            summary: 'Sucesso',
             detail: 'Tutor Deletado',
             life: 3000,
         });
