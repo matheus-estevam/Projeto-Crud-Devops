@@ -81,7 +81,7 @@ export class CrudComponent implements OnInit {
         this.messageService.add({
             severity: 'success',
             summary: 'Successful',
-            detail: 'Products Deleted',
+            detail: 'Tutor deletado',
             life: 3000,
         });
         this.selectedPets = [];
