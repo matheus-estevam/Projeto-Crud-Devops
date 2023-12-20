@@ -11,5 +11,6 @@ export interface Pet {
     estado?: string;
     telefone?: string;
     cpf?: number;
-    sexo?: string; //sexo
+    sexo?: string;
+    idade?: number;
 }

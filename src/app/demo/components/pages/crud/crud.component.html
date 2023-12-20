@@ -8,7 +8,7 @@
                         <button
                             pButton
                             pRipple
-                            label="New"
+                            label="Novo"
                             icon="pi pi-plus"
                             class="p-button-success mr-2"
                             (click)="openNew()"
@@ -16,7 +16,7 @@
                         <button
                             pButton
                             pRipple
-                            label="Delete"
+                            label="Excluir"
                             icon="pi pi-trash"
                             class="p-button-danger"
                             (click)="deleteSelectedPets()"
@@ -30,14 +30,14 @@
                         mode="basic"
                         accept="image/*"
                         [maxFileSize]="1000000"
-                        label="Import"
-                        chooseLabel="Import"
+                        label="Importar"
+                        chooseLabel="Importar"
                         class="mr-2 inline-block"
                     ></p-fileUpload>
                     <button
                         pButton
                         pRipple
-                        label="Export"
+                        label="Exportar"
                         icon="pi pi-upload"
                         class="p-button-help"
                         (click)="dt.exportCSV()"
@@ -60,7 +60,7 @@
                 [paginator]="true"
                 [rowsPerPageOptions]="[10, 20, 30]"
                 [showCurrentPageReport]="true"
-                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas"
                 [(selection)]="selectedPets"
                 selectionMode="multiple"
                 [rowHover]="true"
@@ -93,6 +93,9 @@
                         </th>
                         <th pSortableColumn="nome">
                             Nome <p-sortIcon field="nome"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="idade">
+                            Idade <p-sortIcon field="idade"></p-sortIcon>
                         </th>
                         <th pSortableColumn="rua">
                             Rua <p-sortIcon field="rua"></p-sortIcon>
@@ -140,6 +143,10 @@
                         <td style="width: 14%; min-width: 10rem">
                             <span class="p-column-title">Name</span>
                             {{ pet.nome }}
+                        </td>
+                        <td style="width: 14%; min-width: 10rem">
+                            <span class="p-column-title">Idade</span>
+                            {{ pet.idade }}
                         </td>
                         <td style="width: 14%; min-width: 10rem">
                             <span class="p-column-title">Rua</span>
@@ -239,6 +246,15 @@
                         >O nome é obrigatório.</small
                     >
                 </div>
+
+                <div class="field">
+                    <label for="idade">Idade</label>
+                    <p-inputNumber
+                        id="idade"
+                        [(ngModel)]="pet.idade"
+                    ></p-inputNumber>
+                </div>
+
                 <div class="field">
                     <label for="rua">Rua</label>
                     <textarea
